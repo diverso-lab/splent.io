@@ -1,0 +1,59 @@
+<footer class="bg-white border-t border-black/[0.06]">
+  <div class="mx-auto max-w-6xl px-5 py-16">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-10">
+      <div class="col-span-2 md:col-span-1">
+        <img src="{{ '/splent_logo_dark.svg' | relative_url }}" alt="SPLENT" style="height: 26px; width: auto;" draggable="false">
+        <p class="mt-4 text-[13.5px] text-ink-700/75 leading-relaxed max-w-xs">
+          Software Product Line Engineering Toolkit — from feature model to running product.
+        </p>
+      </div>
+
+      <div>
+        <div class="text-[12px] font-semibold uppercase tracking-[0.18em] text-ink-700/50">Product</div>
+        <ul class="mt-4 space-y-2.5">
+          <li><a href="#features" class="text-[14px] text-ink-700/85 hover:text-ink-900 transition-colors">Features</a></li>
+          <li><a href="#pillars" class="text-[14px] text-ink-700/85 hover:text-ink-900 transition-colors">Ecosystem</a></li>
+          <li><a href="#how" class="text-[14px] text-ink-700/85 hover:text-ink-900 transition-colors">How it works</a></li>
+          <li><a href="#why" class="text-[14px] text-ink-700/85 hover:text-ink-900 transition-colors">Why SPLENT</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="text-[12px] font-semibold uppercase tracking-[0.18em] text-ink-700/50">Documentation</div>
+        <ul class="mt-4 space-y-2.5">
+          <li><a href="{{ site.docs_url }}/getting-started" class="text-[14px] text-ink-700/85 hover:text-ink-900 transition-colors">Getting started</a></li>
+          <li><a href="{{ site.docs_url }}" class="text-[14px] text-ink-700/85 hover:text-ink-900 transition-colors">SPLENT Framework</a></li>
+          <li><a href="{{ site.docs_url }}" class="text-[14px] text-ink-700/85 hover:text-ink-900 transition-colors">SPLENT CLI</a></li>
+          <li><a href="{{ site.docs_url }}" class="text-[14px] text-ink-700/85 hover:text-ink-900 transition-colors">SPLENT Cache</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="text-[12px] font-semibold uppercase tracking-[0.18em] text-ink-700/50">Repositories</div>
+        <ul class="mt-4 space-y-2.5">
+          <li><a href="https://github.com/diverso-lab/splent_framework" class="text-[14px] text-ink-700/85 hover:text-ink-900 transition-colors">splent_framework</a></li>
+          <li><a href="https://github.com/diverso-lab/splent_cli" class="text-[14px] text-ink-700/85 hover:text-ink-900 transition-colors">splent_cli</a></li>
+          <li><a href="https://github.com/splent-io/splent_catalog" class="text-[14px] text-ink-700/85 hover:text-ink-900 transition-colors">splent_catalog</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="text-[12px] font-semibold uppercase tracking-[0.18em] text-ink-700/50">Project</div>
+        <ul class="mt-4 space-y-2.5">
+          <li><a href="https://diverso.us.es" class="text-[14px] text-ink-700/85 hover:text-ink-900 transition-colors">DiversoLab</a></li>
+          <li><a href="mailto:drorganvidez@us.es" class="text-[14px] text-ink-700/85 hover:text-ink-900 transition-colors">Contact</a></li>
+          <li><a href="https://www.gnu.org/licenses/lgpl-3.0.html" class="text-[14px] text-ink-700/85 hover:text-ink-900 transition-colors">License · LGPL v3</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 pt-6 border-t border-black/[0.06] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div class="text-[12.5px] text-ink-700/60">
+        © {{ 'now' | date: '%Y' }} SPLENT · Built by DiversoLab, Universidad de Sevilla.
+      </div>
+      <div class="text-[12.5px] text-ink-700/60">
+        Made with <span class="text-rose-500">♥</span> for Software Product Lines.
+      </div>
+    </div>
+  </div>
+</footer>

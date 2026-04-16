@@ -1,0 +1,16 @@
+_site
+.jekyll-cache
+.sass-cache
+.bundle
+vendor
+node_modules
+.DS_Store
+*.log
+
+# Tailwind compiled output. The CI workflow rebuilds it before deploy, so we
+# don't commit it (keeps diffs clean). If you ever deploy without CI, drop
+# this line so the compiled CSS ships with your commits.
+assets/css/site.css
+
+# Legacy Next.js scaffolding (kept inside _next_reference/ for now)
+_next_reference/

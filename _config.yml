@@ -1,0 +1,55 @@
+title: "SPLENT — From feature model to running product, in one command"
+description: >-
+  SPLENT is a Software Product Line Engineering Toolkit for building modular
+  web applications in Python. Connect formal variability models to Docker,
+  databases, and migrations — with validation built in.
+url: "https://splent.io"
+baseurl: ""
+lang: en
+
+docs_url: "https://docs.splent.io"
+github_url: "https://github.com/diverso-lab"
+
+permalink: pretty
+
+exclude:
+  - Dockerfile
+  - docker-compose.yml
+  - package.json
+  - package-lock.json
+  - node_modules
+  - tailwind.config.js
+  - _next_reference
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+author:
+  name: DiversoLab
+  email: drorganvidez@us.es
+
+social:
+  name: SPLENT
+  links:
+    - https://github.com/diverso-lab
+    - https://github.com/splent-io
+
+twitter:
+  card: summary_large_image
+
+# 1200x630 social preview image (relative to site.url).
+# Replace with a branded og-image.png when the asset is ready — for now we
+# reuse the logo SVG; many scrapers accept it.
+image: /splent_logo.svg
+
+logo: /splent_logo_dark.svg
+
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false

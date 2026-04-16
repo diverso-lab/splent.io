@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===========================================================================
+   SPLENT landing — base tokens + custom helper classes (ported from the
+   original Next.js + Tailwind build).
+   =========================================================================== */
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: #ffffff;
+  color: #0a0f1a;
+  font-feature-settings: "ss01", "cv11";
+}
+
+::selection {
+  background: #105b99;
+  color: #ffffff;
+}
+
+/* Decorative grid patterns used in dark sections */
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%);
+}
+
+/* Gradient text for hero headings (dark + light variants) */
+.gradient-text {
+  background: linear-gradient(120deg, #ffffff 0%, #9cc6e6 40%, #ffd961 85%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% 200%;
+  animation: shimmer 12s linear infinite;
+}
+
+.gradient-text-light {
+  background: linear-gradient(120deg, #0a0f1a 0%, #105b99 55%, #e9b71f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Glass surfaces for the floating nav + terminal chrome */
+.glass {
+  background: rgba(10, 10, 15, 0.6);
+  backdrop-filter: saturate(140%) blur(14px);
+  -webkit-backdrop-filter: saturate(140%) blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: saturate(140%) blur(14px);
+  -webkit-backdrop-filter: saturate(140%) blur(14px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Subtle film-grain noise overlay for dark sections */
+.noise {
+  position: relative;
+}
+.noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* Card hover lift */
+.hover-lift {
+  transition:
+    transform 400ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 400ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 400ms ease;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+}

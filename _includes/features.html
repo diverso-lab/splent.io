@@ -1,0 +1,33 @@
+{%- assign features = "" | split: "" -%}
+<section id="features" class="relative bg-white">
+  <div class="mx-auto max-w-6xl px-5 py-28 sm:py-36">
+    <div class="max-w-2xl">
+      <div class="text-[12.5px] font-medium uppercase tracking-[0.18em] text-brand-600">Capabilities</div>
+      <h2 class="mt-4 text-[34px] sm:text-5xl leading-[1.05] font-semibold tracking-[-0.025em] gradient-text-light">
+        Everything you need to run a product line.
+      </h2>
+      <p class="mt-5 text-[16.5px] text-ink-700/80 leading-relaxed">
+        SPLENT unifies the things that usually live in tribal knowledge — variability, composition, contracts, migrations — into a single, auditable pipeline.
+      </p>
+    </div>
+
+    <div class="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-black/[0.06] rounded-3xl overflow-hidden border border-black/[0.06]">
+      {%- capture icon_package -%}<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8 12 3 3 8l9 5 9-5Z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>{%- endcapture -%}
+      {%- capture icon_merge -%}<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 21V9a9 9 0 0 0 9 9"/></svg>{%- endcapture -%}
+      {%- capture icon_shield -%}<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V5l8-3 8 3v8Z"/><path d="m9 12 2 2 4-4"/></svg>{%- endcapture -%}
+      {%- capture icon_layers -%}<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18 8.58 4.29a1 1 0 0 1 0 1.78l-8.58 4.29a2 2 0 0 1-1.66 0L2.59 8.25a1 1 0 0 1 0-1.78l8.58-4.29a2 2 0 0 1 1.66 0Z"/><path d="m2.59 12.25 8.58 4.29a2 2 0 0 0 1.66 0l8.58-4.29"/><path d="m2.59 16.25 8.58 4.29a2 2 0 0 0 1.66 0l8.58-4.29"/></svg>{%- endcapture -%}
+      {%- capture icon_switch -%}<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 7H3"/><path d="m7 3-4 4 4 4"/><path d="M3 17h18"/><path d="m17 13 4 4-4 4"/></svg>{%- endcapture -%}
+      {%- capture icon_terminal -%}<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>{%- endcapture -%}
+
+      {%- assign cards = "Feature Lifecycle Management|||Install, version, test, and release independent Python packages — each with routing, models, migrations, templates and assets built in.|||package" | split: "|||" -%}
+      {% for c in cards %}{% endfor %}
+
+      {%- include _feature-card.html title="Feature Lifecycle Management" body="Install, version, test, and release independent Python packages — each with routing, models, migrations, templates and assets built in." icon=icon_package -%}
+      {%- include _feature-card.html title="Automated Composition" body="SPLENT merges Docker Compose definitions, environments and infrastructure across every feature — deterministically." icon=icon_merge -%}
+      {%- include _feature-card.html title="Formal Validation" body="UVL satisfiability checking, route collision detection, PyPI availability and contract compatibility — all before Docker starts." icon=icon_shield -%}
+      {%- include _feature-card.html title="Migration Ordering" body="Database migrations are applied in dependency order, so features compose safely no matter the installation sequence." icon=icon_layers -%}
+      {%- include _feature-card.html title="Multi-Environment" body="One pipeline, two targets. Development and production with health checks, port offsets and credential layering." icon=icon_switch -%}
+      {%- include _feature-card.html title="Comprehensive CLI" body="Commands for discovery, lifecycle, contracts, testing and deployment — the operator surface for your product line." icon=icon_terminal -%}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,58 @@
+<section id="why" class="relative bg-[#fafaff]">
+  <div class="mx-auto max-w-6xl px-5 py-28 sm:py-36">
+    <div class="max-w-3xl">
+      <div class="text-[12.5px] font-medium uppercase tracking-[0.18em] text-brand-600">Why SPLENT</div>
+      <h2 class="mt-4 text-[34px] sm:text-5xl leading-[1.05] font-semibold tracking-[-0.025em] gradient-text-light">
+        Variability shouldn't be a maintenance tax.
+      </h2>
+      <p class="mt-5 text-[16.5px] text-ink-700/80 leading-relaxed">
+        Most teams reach for duplication, feature flags, or microservices. SPLENT offers a fourth option —
+        a variability model that drives the infrastructure.
+      </p>
+    </div>
+
+    <div class="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <div>
+        <h3 class="text-[13px] font-semibold uppercase tracking-[0.18em] text-rose-500/80">The old trade-offs</h3>
+        <ul class="mt-5 space-y-4">
+          {% assign pains = "Code duplication|||Forks per client turn into a maintenance nightmare. Every bug fix has to be re-applied across branches.&&Feature-flag sprawl|||Conditionals grow everywhere. The real product behavior disappears into runtime toggles nobody fully tracks.&&Microservice explosion|||Splitting every variation into its own service trades one problem for a distributed systems tax." | split: "&&" %}
+          {% for p in pains %}
+            {% assign parts = p | split: "|||" %}
+            <li class="rounded-2xl bg-white p-5 border border-rose-500/10 shadow-[0_1px_0_rgba(0,0,0,0.03)]">
+              <div class="flex items-start gap-3">
+                <div class="mt-1 h-5 w-5 rounded-full bg-rose-500/10 text-rose-500 flex items-center justify-center">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+                </div>
+                <div>
+                  <div class="text-[15.5px] font-semibold text-ink-900">{{ parts[0] }}</div>
+                  <div class="mt-1 text-[14px] text-ink-700/75 leading-relaxed">{{ parts[1] }}</div>
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-[13px] font-semibold uppercase tracking-[0.18em] text-emerald-600/80">The SPLENT way</h3>
+        <ul class="mt-5 space-y-4">
+          {% assign answers = "A formal model, not a folder of branches|||UVL defines features and constraints explicitly. The model is checked for satisfiability before a single container starts.&&Composition is mechanical, not tribal|||Docker Compose, environments and migrations are merged by the toolkit — deterministic, auditable, reproducible.&&One pipeline, every environment|||product:derive validates, composes and launches. Dev and prod share the same path. Problems surface before Docker." | split: "&&" %}
+          {% for a in answers %}
+            {% assign parts = a | split: "|||" %}
+            <li class="rounded-2xl bg-white p-5 border border-emerald-500/10 shadow-[0_1px_0_rgba(0,0,0,0.03)]">
+              <div class="flex items-start gap-3">
+                <div class="mt-1 h-5 w-5 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                </div>
+                <div>
+                  <div class="text-[15.5px] font-semibold text-ink-900">{{ parts[0] }}</div>
+                  <div class="mt-1 text-[14px] text-ink-700/75 leading-relaxed">{{ parts[1] }}</div>
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

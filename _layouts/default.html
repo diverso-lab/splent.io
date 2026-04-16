@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#105b99">
+
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+
+  {% comment %}
+    jekyll-seo-tag handles:
+      - <title>, meta description
+      - canonical URL
+      - og:title / og:description / og:url / og:site_name / og:type / og:image
+      - twitter:card (summary_large_image via site.twitter.card)
+      - schema.org JSON-LD (WebSite + Organization with site.social/logo/author)
+    Plus we inject a tailored SoftwareApplication node for the landing below.
+  {% endcomment %}
+  {% seo %}
+
+  <!-- Structured data — SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SPLENT",
+    "alternateName": "Software Product Line Engineering Toolkit",
+    "url": "{{ site.url }}",
+    "description": "{{ site.description | strip_newlines }}",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Linux, macOS, Windows (via WSL)",
+    "softwareRequirements": "Python 3.10+, Docker, Docker Compose",
+    "license": "https://www.gnu.org/licenses/lgpl-3.0.html",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "DiversoLab",
+      "url": "https://diverso.us.es",
+      "parentOrganization": {
+        "@type": "CollegeOrUniversity",
+        "name": "Universidad de Sevilla",
+        "url": "https://www.us.es/"
+      }
+    },
+    "sameAs": [
+      "https://github.com/diverso-lab",
+      "https://github.com/splent-io",
+      "{{ site.docs_url }}"
+    ]
+  }
+  </script>
+</head>
+<body class="bg-white text-ink-900 antialiased">
+  <main>
+    {{ content }}
+  </main>
+
+  <script src="{{ '/assets/js/terminal.js' | relative_url }}" defer></script>
+</body>
+</html>

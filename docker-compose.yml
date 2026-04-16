@@ -1,0 +1,30 @@
+services:
+  landing:
+    build:
+      context: ./
+    image: splent-landing:jekyll
+    container_name: splent-landing
+    ports:
+      - "4000:4000"
+      - "35730:35730"
+    volumes:
+      - .:/usr/src/app
+      # Keep node_modules inside the container so the host bind-mount doesn't
+      # shadow what `npm install` produces.
+      - landing_node_modules:/usr/src/app/node_modules
+    working_dir: /usr/src/app
+    stdin_open: true
+    tty: true
+    # Install deps (if missing), compile Tailwind once, then run the watcher
+    # and Jekyll's live-reload server in parallel.
+    command: >
+      bash -lc "
+      [ -f node_modules/.bin/tailwindcss ] || npm install --no-audit --no-fund &&
+      node_modules/.bin/tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/site.css --minify &&
+      (node_modules/.bin/tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/site.css --watch &) &&
+      bundle exec jekyll serve -H 0.0.0.0 -P 4000 --livereload --livereload-port 35730 --force_polling
+      "
+    restart: unless-stopped
+
+volumes:
+  landing_node_modules:

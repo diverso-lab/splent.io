@@ -1,0 +1,86 @@
+<section id="how" class="relative bg-white">
+  <div class="mx-auto max-w-6xl px-5 py-28 sm:py-36">
+    <div class="max-w-3xl">
+      <div class="text-[12.5px] font-medium uppercase tracking-[0.18em] text-brand-600">How it works</div>
+      <h2 class="mt-4 text-[34px] sm:text-5xl leading-[1.05] font-semibold tracking-[-0.025em] gradient-text-light">
+        Model your variability.<br>Derive your product.
+      </h2>
+      <p class="mt-5 text-[16.5px] text-ink-700/80 leading-relaxed">
+        Describe features and constraints in UVL. Let SPLENT validate, compose and launch —
+        one command, every environment.
+      </p>
+    </div>
+
+    <div class="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-5">
+      <div class="relative group">
+        <div class="absolute -inset-0.5 rounded-2xl bg-gradient-to-br from-brand-500/40 to-brand-700/20 opacity-0 group-hover:opacity-100 blur-lg transition -z-10"></div>
+        <div class="rounded-2xl overflow-hidden border border-black/[0.08] bg-ink-900 text-white shadow-[0_20px_60px_-25px_rgba(0,0,0,0.35)]">
+          <div class="flex items-center justify-between px-4 py-2.5 border-b border-white/5 bg-black/40">
+            <div class="flex items-center gap-2">
+              <span class="h-2.5 w-2.5 rounded-full bg-white/20"></span>
+              <span class="font-mono text-[11.5px] text-white/55">splent.uvl</span>
+            </div>
+            <span class="text-[11px] text-white/40">Feature model · source of truth</span>
+          </div>
+          <pre class="px-5 py-5 font-mono text-[12.5px] leading-[1.65] text-white/85 whitespace-pre overflow-x-auto">features
+    SplentApp
+        mandatory
+            Auth
+                alternative
+                    OAuth
+                    Local
+            Profile
+        optional
+            Notifications
+            Analytics
+
+constraints
+    OAuth =&gt; Notifications</pre>
+        </div>
+      </div>
+
+      <div class="relative group">
+        <div class="absolute -inset-0.5 rounded-2xl bg-gradient-to-br from-amber-450/40 to-amber-550/20 opacity-0 group-hover:opacity-100 blur-lg transition -z-10"></div>
+        <div class="rounded-2xl overflow-hidden border border-black/[0.08] bg-ink-900 text-white shadow-[0_20px_60px_-25px_rgba(0,0,0,0.35)]">
+          <div class="flex items-center justify-between px-4 py-2.5 border-b border-white/5 bg-black/40">
+            <div class="flex items-center gap-2">
+              <span class="h-2.5 w-2.5 rounded-full bg-white/20"></span>
+              <span class="font-mono text-[11.5px] text-white/55">terminal</span>
+            </div>
+            <span class="text-[11px] text-white/40">One pipeline · validate → sync → generate → launch</span>
+          </div>
+          <pre class="px-5 py-5 font-mono text-[12.5px] leading-[1.65] text-white/85 whitespace-pre overflow-x-auto"># 1. Install features (pinned)
+splent feature:install splent-io/splent_feature_auth --pinned
+splent feature:install splent-io/splent_feature_profile --pinned
+
+# 2. Derive the product
+splent product:derive --dev
+
+# ▸ UVL satisfiability: OK
+# ▸ Contracts: OK
+# ▸ docker-compose merged
+# ▸ migrations applied in order
+# ✓ running on http://localhost:5000</pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-px rounded-2xl bg-black/[0.06] border border-black/[0.06] overflow-hidden">
+      <div class="bg-white p-7">
+        <div class="font-mono text-[12px] tracking-widest text-brand-600">01</div>
+        <h4 class="mt-2 text-[17px] font-semibold tracking-tight">Validate</h4>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-700/75">UVL satisfiability, contracts, PyPI availability, route collisions.</p>
+      </div>
+      <div class="bg-white p-7">
+        <div class="font-mono text-[12px] tracking-widest text-brand-600">02</div>
+        <h4 class="mt-2 text-[17px] font-semibold tracking-tight">Compose</h4>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-700/75">Merge docker-compose, environments, and infrastructure across features.</p>
+      </div>
+      <div class="bg-white p-7">
+        <div class="font-mono text-[12px] tracking-widest text-brand-600">03</div>
+        <h4 class="mt-2 text-[17px] font-semibold tracking-tight">Launch</h4>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-700/75">Run migrations in dependency order and start the product with health checks.</p>
+      </div>
+    </div>
+  </div>
+</section>
