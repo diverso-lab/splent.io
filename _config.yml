@@ -8,6 +8,7 @@ baseurl: ""
 lang: en
 
 docs_url: "https://docs.splent.io"
+marketplace_url: "https://marketplace.splent.io"
 github_url: "https://github.com/diverso-lab"
 
 permalink: pretty
