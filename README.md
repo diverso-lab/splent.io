@@ -65,7 +65,7 @@ src/
 The copy is based on the public SPLENT documentation:
 
 - "From feature model to running product — in one command"
-- Three pieces of the ecosystem: SPLENT Framework, CLI, Cache
+- Four pieces of the ecosystem, SPLENT Framework, CLI, Cache and Marketplace
 - Problem framing: duplication vs. feature flags vs. microservices vs. SPLENT
 - Pipeline stages: **Validate → Compose → Launch**
 
